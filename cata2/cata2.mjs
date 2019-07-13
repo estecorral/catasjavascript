@@ -1,4 +1,7 @@
 export function arabicer(rom) {
+    if (validator(rom) !== 'Correcto') {
+        return 'El número romano ' + rom + ' no es correcto';
+    }
     rom = rom.toString();
     let arabe = 0;
     let sumador = 0;
@@ -62,6 +65,8 @@ export function arabicer(rom) {
             res += romanizaArray(numArray[i]);
         }
         return res;
+    } else {
+        console.log('El n');
     }
  }
 
@@ -139,4 +144,38 @@ export function arabicer(rom) {
         result += romanizaArray(num);
     }
     return result;
+}
+
+export function validator(romano) {
+    let v = romano.search(/V/);
+    let l = romano.search(/L/);
+    let d = romano.search(/D/);
+    let romano2;
+    let res = /XXXX|IIII|CCCC|MMMM|VL|VD|VX|VC|VM|LC|LD|LM|DM|IC|IM|XM|IIIV|IIIX/.test(romano);
+    if (v !== -1 || l !== -1 || d !== -1) {
+        if (v !== -1) {
+            romano2 = romano.substring(v+1, romano.length);
+            v = romano2.search(/V/);
+            if (v !== -1) {
+                return 'Número romano incorrecto, contiene más de una V';
+            }
+        }
+        if (l !== -1) {
+            romano2 = romano.substring(l+1, romano.length);
+            l = romano2.search(/L/);
+            if (l !== -1) {
+                return 'Número romano incorrecto, contiene más de una L';
+            }
+        }
+        if (d !== -1) {
+            romano2 = romano.substring(d+1, romano.length);
+            d = romano2.search(/D/);
+            if (d !== -1) {
+                return 'Número romano incorrecto, contiene más de una D';
+            }
+        }
+    } if (res) {
+        return 'El número romano introducido es incorrecto';
+    }
+    return 'Correcto';
 }
