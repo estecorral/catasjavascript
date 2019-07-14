@@ -175,7 +175,7 @@ export function validator(romano) {
             }
         }
     } if (res) {
-        return 'El número romano introducido es incorrecto';
+        return 'El número romano ' + romano + ' es incorrecto';
     }
     return 'Correcto';
 }
