@@ -3,6 +3,8 @@ import {Mano} from "./mano.mjs";
 export function recibeManos (mano1, mano2) {
     let mano1L = Mano.crearMano (mano1);
     let mano2L = Mano.crearMano (mano2);
+    console.log('MANO1: ', mano1L);
+    console.log('MANO1: ', mano2L);
     if (mano1L.color === true && mano1L.escalera === true && mano2L.color === false){
         return 'Gana mano1 con escalera de color';
     } else if (mano1L.color === true && mano1L.escalera === true && mano2L.color === true && mano2L.escalera === true){

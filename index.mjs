@@ -18,5 +18,5 @@ console.log('El número romano es: ', res);
 res = kata2.validator('IIIV');
 console.log(res);
 
-res = kata3.recibeManos('2C 3H 4H 5H KH', 'AC 5H 6C 7C 8C');
+res = kata3.recibeManos('2H 2C 4H 5H KH', 'AC 5H 6C 7C 8C');
 console.log(res);

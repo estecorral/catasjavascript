@@ -36,7 +36,6 @@ export class Mano {
     static parejas (cartas) {
         let num = {};
         cartas.forEach( carta => {
-            if(cata.getValor)
             num[carta.getValor()] = num[carta.getValor()] ? num[carta.getValor()] + 1 : 1;
         });
         return num;
